@@ -120,9 +120,9 @@ TextureImporter:
       name: TileMap_1-hd_0
       rect:
         serializedVersion: 2
-        x: 113
+        x: 116
         y: 799
-        width: 112
+        width: 106
         height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

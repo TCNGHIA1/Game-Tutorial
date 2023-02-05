@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Animator ani;
     Rigidbody2D rBody;
-    float speed = 8f, height = 30f;
+    float speed = 8f, height = 40f;
     float jumpTime, runTime;
     bool running, jumped, jumping, grounded = false;
     int moveState;
@@ -74,7 +74,11 @@ public class PlayerController : MonoBehaviour
         }
         if (!jumping && jumped)
         {
-            rBody.gravityScale += .4f;
+            rBody.gravityScale += 0.2f;
+        }
+        if(!jumping && !jumped)
+        {
+            rBody.gravityScale = 20f;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -147,7 +151,6 @@ public class PlayerController : MonoBehaviour
             jumping = true;
             jumpTime += Time.fixedDeltaTime;
             ani.SetBool("isJump", true);
-
         }
         else
         {
