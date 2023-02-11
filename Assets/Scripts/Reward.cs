@@ -10,8 +10,13 @@ public class Reward : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GameController.instance.soundCoin(true);
             GameController.instance.AddScore(coinValue);
             Destroy(gameObject);
+        }
+        else
+        {
+            GameController.instance.soundCoin(false);
         }
 
     }

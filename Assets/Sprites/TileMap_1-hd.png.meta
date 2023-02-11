@@ -607,8 +607,8 @@ TextureImporter:
         y: 185
         width: 54
         height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.090205155, y: 0.09232114}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -960,10 +960,10 @@ TextureImporter:
       name: TileMap_1-hd_40
       rect:
         serializedVersion: 2
-        x: 190
-        y: 16
-        width: 34
-        height: 34
+        x: 200
+        y: 17
+        width: 23
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

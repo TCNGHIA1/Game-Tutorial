@@ -12,10 +12,16 @@ public class LookWall : MonoBehaviour
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(),collision.gameObject.GetComponent<Collider2D>());
             return;
         }
+        if (collision.gameObject.tag == "Reward")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
+            return;
+        }
         if (collision.gameObject.tag == "Ground")
         {
             obstacleObject.transform.localScale = new Vector3(-obstacleObject.transform.localScale.x, 
                 obstacleObject.transform.localScale.y, obstacleObject.transform.localScale.z);
         }
+        
     }
 }
