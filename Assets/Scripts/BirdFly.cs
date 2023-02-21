@@ -13,12 +13,13 @@ public class BirdFly : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
-        maxDistance=20f;
+        speed = 85f;
+        maxDistance =20f;
         distance = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         distance += Time.fixedDeltaTime * 2.5f;
         if(distance > maxDistance)

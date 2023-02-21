@@ -6,19 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextLevel : MonoBehaviour
 {
-    public float delaySecond = 3;
-
+    public float delaySecond = 2;
+    public AudioSource source;
+    //when player touch the gate
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.SetActive(false);
-
-            ModeSelect();
+            source.Play();
+            GameController.instance.always.Pause();
+            SelectNextLevel();
         }
     }
 
-    public void ModeSelect()
+    //funtion to next level
+    private void SelectNextLevel()
     {
         StartCoroutine(LoadAfterDelay());
     }
@@ -29,4 +32,5 @@ public class LoadNextLevel : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 }

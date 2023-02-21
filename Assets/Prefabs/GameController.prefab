@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3208240166036735813}
-  - component: {fileID: 3208240166036735812}
   - component: {fileID: 3208240166036735815}
   - component: {fileID: 3208240166036735814}
+  - component: {fileID: 1041999678}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -34,22 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3208240166036735812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3208240166036735819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f098d7ae5a2f2864eaac74e6f4bcdc33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  gameOverScoreText: {fileID: 0}
-  gameOverText: {fileID: 0}
-  isGameOver: 0
 --- !u!114 &3208240166036735815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,3 +58,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52708b1d87dfa4a42bf1ff7079d399c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1041999678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208240166036735819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f098d7ae5a2f2864eaac74e6f4bcdc33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  gameOverScoreText: {fileID: 0}
+  nextLevel: {fileID: 0}
+  nexLevelScoreText: {fileID: 0}
+  soundDeath: {fileID: 0}
+  always: {fileID: 0}
+  coin: {fileID: 0}
+  isGameOver: 0

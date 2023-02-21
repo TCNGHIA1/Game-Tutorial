@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -8,16 +9,21 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    public Text scoreText;
-    public Text gameOverScoreText;
-    public GameObject gameOverText;
-    public bool isGameOver = false;
+    //show score in left text
     private int score = 0;
+    public Text scoreText;
+    
+    //controller when game over
+    public GameObject gameOverText;
+    public Text gameOverScoreText;
 
+    //audio
     public AudioSource soundDeath;
     public AudioSource always;
     public AudioSource coin;
 
+    //
+    public bool isGameOver;
     private void Awake()
     {
         if(instance == null) {
@@ -27,21 +33,24 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void check(bool isGameOver)
+    //Check gameover
+    public void check(bool GameOver)
     {
-        if (isGameOver == true) 
+        if (GameOver) 
         {
             gameOverScoreText.text = "Your Score: " + this.score;
             gameOverText.SetActive(true);
             always.Stop();
             soundDeath.Play();
-            this.isGameOver = true;
+            isGameOver = true;
         }
         else
         {
             always.Play();
         }
     }
+
+    //count score when claim coin
     public void AddScore(int score)
     {
 

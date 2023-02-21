@@ -9,11 +9,10 @@ public class ReloadCurrentScene : MonoBehaviour
     {
         if(GameController.instance.isGameOver)
         {
-            Time.timeScale = 1;
             GameController.instance.isGameOver= false;
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 }

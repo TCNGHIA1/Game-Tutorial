@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump(grounded);
+        Jump();
         HandleMovement();
         if (grounded)
         {
@@ -40,9 +40,9 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void Jump(bool ground)
+    private void Jump()
     {
-        if(ground && Input.GetKeyDown(KeyCode.Space))
+        if(grounded && Input.GetKeyDown(KeyCode.Space))
         {
             rBody.velocity = Vector2.up * height;
         }
@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Obstacle")
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+    //check player is standing on the ground
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    //check player touch obstacle then game over
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Obstacle")
@@ -97,6 +100,8 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+    //check player isn't standing on the ground
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
